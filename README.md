@@ -24,9 +24,11 @@ require('node-hook');
 function logLoadedFilename(source, filename) {
     return 'console.log(' + filename + ');\n' + source;
 }
-hook.install('.js', logLoadedFilename);
+hook.hook('.js', logLoadedFilename);
 require('./dummy');
 // prints fulle dummy.js filename, runs dummy.js
+
+hook.unhook('.js'); // removes your own transform
 ```
 
 **remember:** Nodejs caches compiled modules, so if the transform is not
