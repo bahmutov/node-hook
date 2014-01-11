@@ -1,0 +1,22 @@
+{
+  "name": "node-hook",
+  "version": "0.0.0",
+  "description": "Run source transform function on Node require",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bahmutov/node-hook.git"
+  },
+  "keywords": [
+    "require",
+    "node",
+    "load",
+    "hook",
+    "transform"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT"
+}
