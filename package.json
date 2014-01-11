@@ -4,7 +4,7 @@
   "description": "Run source transform function on Node require",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/gt test/jsTest.js --output"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
     "hook",
     "transform"
   ],
+  "pre-commit": "npm test",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gt": "~0.8.22",
+    "pre-git": "0.0.14"
+  }
 }
