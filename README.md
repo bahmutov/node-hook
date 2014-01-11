@@ -10,6 +10,29 @@
 
 [![endorse][endorse-image]][endorse-url]
 
+## Install and use
+
+```sh
+npm install --save node-hook
+```
+
+Before loading desired *.js* files, install hook
+
+```js
+require('node-hook');
+
+function logLoadedFilename(source, filename) {
+    return 'console.log(' + filename + ');\n' + source;
+}
+hook.install('.js', logLoadedFilename);
+require('./dummy');
+// prints fulle dummy.js filename, runs dummy.js
+```
+
+**remember:** Nodejs caches compiled modules, so if the transform is not
+working, you might need to delete the cached entry in `require.cache`,
+then call `require(filename)` again to force reload.
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2013
