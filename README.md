@@ -19,7 +19,7 @@ npm install --save node-hook
 Before loading desired *.js* files, install hook
 
 ```js
-require('node-hook');
+var hook = require('node-hook');
 
 function logLoadedFilename(source, filename) {
     return 'console.log("' + filename + '");\n' + source;
