@@ -22,7 +22,7 @@ Before loading desired *.js* files, install hook
 require('node-hook');
 
 function logLoadedFilename(source, filename) {
-    return 'console.log(' + filename + ');\n' + source;
+    return 'console.log("' + filename + '");\n' + source;
 }
 hook.hook('.js', logLoadedFilename);
 require('./dummy');
