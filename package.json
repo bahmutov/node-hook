@@ -21,7 +21,7 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "gt": "~0.8.22",
-    "pre-git": "0.0.14"
+    "gt": "0.8.47",
+    "pre-git": "0.1.1"
   }
 }
