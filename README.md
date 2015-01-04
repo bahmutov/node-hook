@@ -35,6 +35,8 @@ hook.unhook('.js'); // removes your own transform
 working, you might need to delete the cached entry in `require.cache`,
 then call `require(filename)` again to force reload.
 
+Related: Node require replacement [really-need](https://github.com/bahmutov/really-need).
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2013
