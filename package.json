@@ -18,11 +18,15 @@
     "hook",
     "transform"
   ],
-  "pre-commit": ["npm test", "npm run use-case", "npm version"],
+  "pre-commit": [
+    "npm test",
+    "npm run use-case",
+    "npm version"
+  ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "gt": "0.8.47",
-    "pre-git": "0.1.1"
+    "pre-git": "0.2.1"
   }
 }
