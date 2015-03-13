@@ -44,7 +44,7 @@ Author: Gleb Bahmutov &copy; 2013
 * [Changelog](History.md)
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://bahmutov.calepin.co/)
+* [blog](http://glebbahmutov.com/blog/)
 
 License: [MIT](MIT-license.md) - do anything with the code,
 but don't blame me if it does not work.
