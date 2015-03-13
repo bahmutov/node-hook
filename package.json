@@ -4,7 +4,8 @@
   "description": "Run source transform function on Node require",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/gt test/jsTest.js --output"
+    "test": "node node_modules/gt test/jsTest.js --output",
+    "use-case": "node test/use-case.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
     "hook",
     "transform"
   ],
-  "pre-commit": ["npm test", "npm version"],
+  "pre-commit": ["npm test", "npm run use-case", "npm version"],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
