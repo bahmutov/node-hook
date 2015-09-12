@@ -10,6 +10,10 @@
 var fs = require('fs'),
   Module = require('module');
 
+//dummy definition in case module is not available:
+if (!Module) Module = {};
+if (!Module._extensions) { console.log("dummy module def"); Module._extensions = []; }
+
 var originalLoaders = {};
 var nestedTransforms = {}; //allow nested transforms
 
