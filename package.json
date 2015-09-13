@@ -4,7 +4,7 @@
   "description": "Run source transform function on Node require",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/gt test/jsTest.js --output",
+    "test": "gt test/jsTest.js --output",
     "use-case": "node test/use-case.js"
   },
   "repository": {
