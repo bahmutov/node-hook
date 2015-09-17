@@ -1,6 +1,6 @@
 {
   "name": "node-hook",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Run source transform function on Node require",
   "main": "index.js",
   "scripts": {

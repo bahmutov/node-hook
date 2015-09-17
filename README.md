@@ -37,6 +37,9 @@ then call `require(filename)` again to force reload.
 
 Related: Node require replacement [really-need](https://github.com/bahmutov/really-need).
 
+You can hook several transformers thanks to the [code](https://github.com/bahmutov/node-hook/pull/2) 
+submitted by [djulien](https://github.com/djulien)
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2013
