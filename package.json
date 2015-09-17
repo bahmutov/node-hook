@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gt test/jsTest.js --output",
-    "use-case": "node test/use-case.js"
+    "use-case": "node test/use-case.js & node test/use-case-nested.js"
   },
   "repository": {
     "type": "git",
