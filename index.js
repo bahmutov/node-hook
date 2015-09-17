@@ -1,4 +1,6 @@
+
 // based on https://github.com/gotwarlost/istanbul/blob/master/lib/hook.js
+'use strict'; //catch errors more easily
 
 /*
  Copyright (c) 2012, Yahoo! Inc.  All rights reserved.
@@ -8,7 +10,12 @@
 var fs = require('fs'),
   Module = require('module');
 
+//dummy definition in case module is not available:
+if (!Module) Module = {};
+if (!Module._extensions) { console.log("dummy module def"); Module._extensions = []; }
+
 var originalLoaders = {};
+var nestedTransforms = {}; //allow nested transforms
 
 var verify = {
   extension: function (str) {
@@ -40,14 +47,28 @@ function hook(extension, transform, options) {
   verify.extension(extension);
   verify.transform(transform);
 
-  originalLoaders[extension] = Module._extensions[extension];
+  if (!nestedTransforms[extension]) nestedTransforms[extension] = [];
+  if (!nestedTransforms[extension].length) //only store the first one -DJ
+    originalLoaders[extension] = Module._extensions[extension];
+  nestedTransforms[extension].push(transform); //allow nested transforms -DJ
+
 
   Module._extensions[extension] = function (module, filename) {
     if (options.verbose) {
       console.log('transforming', filename);
     }
     var source = fs.readFileSync(filename, 'utf8');
-    var ret = transform(source, filename);
+    var ret = null; //transform(source, filename);
+    nestedTransforms[extension].every(function(nested) //nesting order performs earlier first, later last
+    {
+//        console.log("IN: " + source);
+        ret = nested(source, filename);
+//        console.log("OUT: " + ret);
+//        if (typeof ret !== 'string') return false; //break
+//        if (!options.toString) return false; //stop here
+        source = ret + ""; //convert to string and keep going
+        return true; //continue
+    });
     if (typeof ret === 'string') {
       module._compile(ret, filename);
     } else if (options.verbose) {
@@ -64,7 +85,9 @@ function unhook(extension) {
     extension = '.js';
   }
   verify.extension(extension);
-  Module._extensions[extension] = originalLoaders[extension];
+  nestedTransforms[extension].pop(); //assumes no stack underflow
+  if (!nestedTransforms[extension].length) //restore original only once
+    Module._extensions[extension] = originalLoaders[extension];
 }
 
 module.exports = {
