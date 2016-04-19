@@ -7,7 +7,8 @@
     "test": "gt test/jsTest.js --output",
     "use-case": "node test/use-case.js & node test/use-case-nested.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "issues": "git-issues"
+    "issues": "git-issues",
+    "check": "autochecker 0.12 4.0 5.0"
   },
   "repository": {
     "type": "git",
