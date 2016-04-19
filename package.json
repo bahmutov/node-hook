@@ -8,7 +8,9 @@
     "use-case": "node test/use-case.js & node test/use-case-nested.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "issues": "git-issues",
-    "check": "autochecker 0.12 4.0 5.0"
+    "check": "autochecker 0.12 4.0 5.0",
+    "commit": "commit-wizard",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "repository": {
     "type": "git",
@@ -21,17 +23,29 @@
     "hook",
     "transform"
   ],
-  "pre-commit": [
-    "npm test",
-    "npm run use-case",
-    "npm version"
-  ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "git-issues": "1.2.0",
-    "gt": "0.8.49",
-    "pre-git": "0.2.1",
-    "semantic-release": "^4.3.5"
+    "gt": "0.9.1",
+    "pre-git": "3.8.3",
+    "semantic-release": "6.2.1"
+  },
+  "files": [
+    "index.js",
+    "MIT-license.md"
+  ],
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [
+        "npm test",
+        "npm run use-case"
+      ],
+      "pre-push": ["npm run size"],
+      "post-commit": [],
+      "post-checkout": [],
+      "post-merge": []
+    }
   }
 }
