@@ -7,8 +7,7 @@
 [![Build status][node-hook-ci-image]][node-hook-ci-url]
 [![dependencies][node-hook-dependencies-image]][node-hook-dependencies-url]
 [![devdependencies][node-hook-devdependencies-image]][node-hook-devdependencies-url]
-
-[![endorse][endorse-image]][endorse-url]
+[![semantic-release][semantic-image] ][semantic-url]
 
 ## Install and use
 
@@ -62,5 +61,5 @@ Support: if you find any problems with this module, email / tweet / open issue o
 [node-hook-dependencies-url]: https://david-dm.org/bahmutov/node-hook
 [node-hook-devdependencies-image]: https://david-dm.org/bahmutov/node-hook/dev-status.png
 [node-hook-devdependencies-url]: https://david-dm.org/bahmutov/node-hook#info=devDependencies
-[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
-[endorse-url]: https://coderwall.com/bahmutov
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release

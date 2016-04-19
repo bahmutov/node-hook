@@ -1,15 +1,17 @@
 {
   "name": "node-hook",
-  "version": "0.2.0",
   "description": "Run source transform function on Node require",
+  "version": "0.0.0-semantic-release",
   "main": "index.js",
   "scripts": {
     "test": "gt test/jsTest.js --output",
-    "use-case": "node test/use-case.js & node test/use-case-nested.js"
+    "use-case": "node test/use-case.js & node test/use-case-nested.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "issues": "git-issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bahmutov/node-hook.git"
+    "url": "https://github.com/bahmutov/node-hook.git"
   },
   "keywords": [
     "require",
@@ -26,7 +28,9 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "git-issues": "1.2.0",
     "gt": "0.8.49",
-    "pre-git": "0.2.1"
+    "pre-git": "0.2.1",
+    "semantic-release": "^4.3.5"
   }
 }
