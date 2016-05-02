@@ -8,7 +8,8 @@
     "use-case": "node test/use-case.js & node test/use-case-nested.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "issues": "git-issues",
-    "check": "autochecker 0.12 4.0 5.0",
+    "check": "autochecker 0.12.9 4.0 5.0",
+    "check-0.12": "autochecker 0.12.6",
     "commit": "commit-wizard",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
