@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gt test/jsTest.js --output",
+    "terminal-test": "node test/terminal-test.js",
     "use-case": "node test/use-case.js & node test/use-case-nested.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "issues": "git-issues",
@@ -28,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "git-issues": "1.2.0",
-    "gt": "0.9.1",
+    "gt": "0.10.0",
     "pre-git": "3.8.3",
     "semantic-release": "6.2.1"
   },
