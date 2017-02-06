@@ -36,8 +36,25 @@ then call `require(filename)` again to force reload.
 
 Related: Node require replacement [really-need](https://github.com/bahmutov/really-need).
 
-You can hook several transformers thanks to the [code](https://github.com/bahmutov/node-hook/pull/2) 
+You can hook several transformers thanks to the [code](https://github.com/bahmutov/node-hook/pull/2)
 submitted by [djulien](https://github.com/djulien)
+
+## Existing transform
+
+You can get the current transform and run any source through it. For example
+to see how the current source looks when loaded but before evaluated
+
+```js
+const filename = resolve('./call-foo.js')
+const transform = Module._extensions['.js']
+const fakeModule = {
+  _compile: source => {
+    console.log('transformed code')
+    console.log(source)
+  }
+}
+transform(fakeModule, filename)
+```
 
 ## Small print
 
