@@ -70,13 +70,13 @@ but don't blame me if it does not work.
 
 Support: if you find any problems with this module, email / tweet / open issue on Github
 
-[node-hook-icon]: https://nodei.co/npm/node-hook.png?downloads=true
+[node-hook-icon]: https://nodei.co/npm/node-hook.svg?downloads=true
 [node-hook-url]: https://npmjs.org/package/node-hook
-[node-hook-ci-image]: https://travis-ci.org/bahmutov/node-hook.png?branch=master
+[node-hook-ci-image]: https://travis-ci.org/bahmutov/node-hook.svg?branch=master
 [node-hook-ci-url]: https://travis-ci.org/bahmutov/node-hook
-[node-hook-dependencies-image]: https://david-dm.org/bahmutov/node-hook.png
+[node-hook-dependencies-image]: https://david-dm.org/bahmutov/node-hook.svg
 [node-hook-dependencies-url]: https://david-dm.org/bahmutov/node-hook
-[node-hook-devdependencies-image]: https://david-dm.org/bahmutov/node-hook/dev-status.png
+[node-hook-devdependencies-image]: https://david-dm.org/bahmutov/node-hook/dev-status.svg
 [node-hook-devdependencies-url]: https://david-dm.org/bahmutov/node-hook#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
