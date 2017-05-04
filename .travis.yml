@@ -4,13 +4,9 @@ cache:
   directories:
     - node_modules
 notifications:
-  email: false
+  email: true
 node_js:
-  - '0.12'
-  - '4'
   - '6'
-before_install:
-  - npm i -g npm@^2.0.0
 before_script:
   - npm prune
 after_success:
