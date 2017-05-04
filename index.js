@@ -15,10 +15,14 @@ let Module = require('module')
 if (!Module) Module = {}
 if (!Module._extensions) { console.log('dummy module def'); Module._extensions = [] }
 
-var originalLoaders = {}
-var nestedTransforms = {} // allow nested transforms
+const originalLoaders = {}
+const nestedTransforms = {} // allow nested transforms
 
-var verify = {
+function warn (message) {
+  console.log('🔥 ', message)
+}
+
+const verify = {
   extension: function (str) {
     if (typeof str !== 'string') {
       throw new Error('expected string extension, have ' + str)
@@ -67,8 +71,7 @@ function hook (extension, transform, options) {
       // nesting order performs earlier first, later last
       ret = nested(source, filename)
       if (ret === undefined) {
-        console.error('🔥  source transform returned undefined for file',
-          filename)
+        warn('source transform returned undefined for file ' + filename)
       }
       source = ret + '' // convert to string and keep going
       return true // continue
@@ -85,14 +88,20 @@ function hook (extension, transform, options) {
 }
 
 function unhook (extension) {
+  console.log('unhooking require hook for', extension)
   if (typeof extension === 'undefined') {
     extension = '.js'
   }
   verify.extension(extension)
-  nestedTransforms[extension].pop() // assumes no stack underflow
-  if (!nestedTransforms[extension].length) {
-    // restore original only once
-    Module._extensions[extension] = originalLoaders[extension]
+  if (nestedTransforms[extension] && nestedTransforms[extension].length) {
+    nestedTransforms[extension].pop()
+    if (!nestedTransforms[extension].length) {
+      // restore original only once
+      Module._extensions[extension] = originalLoaders[extension]
+    }
+  } else {
+    warn('Hmm, trying to unhook extension for ' + extension +
+      ' it has not been registered')
   }
 }
 

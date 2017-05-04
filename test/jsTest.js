@@ -25,4 +25,6 @@ gt.test('basics', function () {
   });
   require('./dummy');
   gt.ok(transformCalled, 'transform function was called');
+
+  hook.unhook('.js')
 });
