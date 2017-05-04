@@ -12,7 +12,9 @@
     "check": "autochecker 0.12.9 4.0 5.0 6",
     "check-0.12": "autochecker 0.12.6",
     "commit": "commit-wizard",
-    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
+    "lint": "standard --verbose --fix index.js",
+    "pretest": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
     "git-issues": "1.3.1",
     "gt": "0.10.0",
     "pre-git": "3.14.0",
-    "semantic-release": "6.3.6"
+    "semantic-release": "6.3.6",
+    "standard": "10.0.2"
   },
   "files": [
     "index.js",
