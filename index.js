@@ -66,6 +66,10 @@ function hook (extension, transform, options) {
     nestedTransforms[extension].every(function (nested) {
       // nesting order performs earlier first, later last
       ret = nested(source, filename)
+      if (ret === undefined) {
+        console.error('🔥  source transform returned undefined for file',
+          filename)
+      }
       source = ret + '' // convert to string and keep going
       return true // continue
     })
