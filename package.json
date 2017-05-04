@@ -1,6 +1,7 @@
 {
   "name": "node-hook",
   "description": "Run source transform function on Node require",
+  "version": "0.0.0-semantic-release",
   "main": "index.js",
   "scripts": {
     "test": "gt test/jsTest.js --output",
